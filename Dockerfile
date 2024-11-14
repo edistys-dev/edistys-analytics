@@ -12,21 +12,11 @@ RUN yarn install --frozen-lockfile
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-# Copy the rest of the application code
 COPY . .
-
-# Create a .env file for the build process
-# RUN cp .env .env.production
-
 COPY docker/middleware.js ./src
 
-# Set build arguments
-ARG DATABASE_URI
 ARG DATABASE_TYPE
 ARG BASE_PATH
-
-# Create .env file with build arguments
-RUN echo "DATABASE_URI=\"${DATABASE_URI}\"" > .env
 
 ENV DATABASE_TYPE $DATABASE_TYPE
 ENV BASE_PATH $BASE_PATH

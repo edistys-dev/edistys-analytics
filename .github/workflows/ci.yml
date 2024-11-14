@@ -2,7 +2,7 @@ name: Umami CI/CD
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 env:
   DATABASE_TYPE: postgresql

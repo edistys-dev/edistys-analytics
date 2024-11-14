@@ -10,6 +10,7 @@ env:
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
   DOCKER_REPOSITORY: reasatrafio29/edistys-analytics
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
 jobs:
 
@@ -37,3 +38,5 @@ jobs:
           ${{ github.ref_name }}
           latest
         push: true
+        secrets: |
+          DATABASE_URL=${{ secrets.DATABASE_URL }}

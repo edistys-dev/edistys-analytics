@@ -2,14 +2,14 @@ name: Umami CI/CD
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 env:
   DATABASE_TYPE: postgresql
   SKIP_DB_CHECK: 1
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-  DOCKER_REPOSITORY: reasatrafio29/edistys-analytics:latest
+  DOCKER_REPOSITORY: reasatrafio29/edistys-analytics
 
 jobs:
 
@@ -32,6 +32,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        repository: reasatrafio29/edistys-analytics:latest
-        tag_with_ref: true
+        repository: reasatrafio29/edistys-analytics
+        tags: |
+          ${{ github.ref_name }}
+          latest
         push: true

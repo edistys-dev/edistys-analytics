@@ -39,7 +39,7 @@ name: Build Docker images and Deploy
 
 on:
   push:
-    branches: ['main']
+    branches: ['master']
 
 jobs:
   build-and-deploy:

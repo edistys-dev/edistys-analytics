@@ -16,7 +16,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Create a .env file for the build process
-RUN cp .env .env.production
+# RUN cp .env .env.production
 
 COPY docker/middleware.js ./src
 

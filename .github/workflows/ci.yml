@@ -100,3 +100,25 @@ jobs:
           build-args: |
             DATABASE_URL=${{ secrets.DATABASE_URL }}
             DATABASE_TYPE=postgresql
+
+      # - name: Trigger Dokploy Deployment
+      #   if: success() # Only run if the Docker build succeeds
+      #   run: |
+      #     response=$(curl -X 'POST' \
+      #       "${{ secrets.DOKPLOY_URL }}/api/application.deploy" \
+      #       -H 'accept: application/json' \
+      #       -H 'Content-Type: application/json' \
+      #       -H "Authorization: Bearer ${{ secrets.DOKPLOY_AUTH_TOKEN }}" \
+      #       -d "{\"applicationId\": \"${{ secrets.DOKPLOY_APPLICATION_ID }}\"}" \
+      #       -w "%{http_code}" \
+      #       -o /dev/null \
+      #       -s)
+
+      #     if [ "$response" -ne 200 ]; then
+      #       echo "Deployment failed with status code: $response"
+      #       exit 1
+      #     fi
+      #   env:
+      #     DOKPLOY_URL: ${{ secrets.DOKPLOY_URL }}
+      #     DOKPLOY_AUTH_TOKEN: ${{ secrets.DOKPLOY_AUTH_TOKEN }}
+      #     DOKPLOY_APPLICATION_ID: ${{ secrets.DOKPLOY_APPLICATION_ID }}

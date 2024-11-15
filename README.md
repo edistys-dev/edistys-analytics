@@ -73,7 +73,7 @@ mysql://username:mypassword@localhost:3306/mydb
 yarn build
 ```
 
-*The build step will create tables in your database if you are installing for the first time. It will also create a login user with username **admin** and password **umami**.*
+_The build step will create tables in your database if you are installing for the first time. It will also create a login user with username **admin** and password **umami**._
 
 ### Start the Application
 
@@ -81,7 +81,7 @@ yarn build
 yarn start
 ```
 
-*By default, this will launch the application on `http://localhost:3000`. You will need to either [proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/) requests from your web server or change the [port](https://nextjs.org/docs/api-reference/cli#production) to serve the application directly.*
+_By default, this will launch the application on `http://localhost:3000`. You will need to either [proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/) requests from your web server or change the [port](https://nextjs.org/docs/api-reference/cli#production) to serve the application directly._
 
 ---
 
@@ -154,6 +154,5 @@ docker compose up --force-recreate
 [twitter-shield]: https://img.shields.io/badge/Twitter--blue?style=social&logo=twitter
 [twitter-url]: https://twitter.com/umami_software
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn--blue?style=social&logo=linkedin
-[linkedin-url]: https://linkedin.com/company/umami-software
 [discord-shield]: https://img.shields.io/badge/Discord--blue?style=social&logo=discord
 [discord-url]: https://discord.com/invite/4dz4zcXYrQ
